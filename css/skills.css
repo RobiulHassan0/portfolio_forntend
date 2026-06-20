@@ -1,0 +1,104 @@
+/* ===== Skills & Stack ===== */
+.skills-groups {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 900px) {
+  .skills-groups { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+.skill-group {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.skill-group::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(600px 200px at 0% 0%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 60%);
+  pointer-events: none;
+}
+.skill-group-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+.skill-group-head h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--foreground);
+  display: flex; align-items: center; gap: .5rem;
+}
+.skill-group-head h3::before {
+  content: "";
+  width: 8px; height: 8px; border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 16px var(--accent);
+}
+.skill-group-sub { color: var(--muted-foreground); font-size: .8rem; }
+.skill-group-count {
+  color: var(--accent);
+  font-size: .85rem;
+  padding: .25rem .55rem;
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, transparent);
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--accent) 10%, transparent);
+}
+
+.skill-cards { display: flex; flex-direction: column; gap: .9rem; position: relative; }
+
+.skill-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: .85rem;
+  padding: 1rem 1.1rem;
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+.skill-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+  background: rgba(255,255,255,0.035);
+}
+.skill-card-top {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: .9rem;
+  align-items: center;
+}
+.skill-icon {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: .65rem;
+  color: var(--accent);
+  background: color-mix(in oklab, var(--accent) 12%, transparent);
+  border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+}
+.skill-icon svg { width: 22px; height: 22px; }
+.skill-meta h4 { margin: 0 0 .15rem; font-size: 1rem; font-weight: 600; color: var(--foreground); }
+.skill-meta p  { margin: 0; font-size: .82rem; color: var(--muted-foreground); line-height: 1.4; }
+.skill-percent { color: var(--accent); font-size: .95rem; font-weight: 600; min-width: 3.2rem; text-align: right; }
+
+.skill-bar {
+  margin-top: .85rem;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), color-mix(in oklab, var(--accent) 50%, white));
+  border-radius: 999px;
+  transition: width 1.2s cubic-bezier(.2,.7,.2,1);
+  box-shadow: 0 0 12px color-mix(in oklab, var(--accent) 60%, transparent);
+}
+
+@media (max-width: 520px) {
+  .skill-card-top { grid-template-columns: 40px 1fr; }
+  .skill-percent { grid-column: 2; text-align: left; margin-top: -.25rem; }
+}

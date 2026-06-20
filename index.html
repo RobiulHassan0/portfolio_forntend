@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alex Carter — Full Stack Laravel Developer</title>
+  <meta name="description" content="Full Stack Laravel developer building practical, performant web applications and clean APIs. Available for new projects." />
+  <meta property="og:title" content="Alex Carter — Full Stack Laravel Developer" />
+  <meta property="og:description" content="Backend-focused developer shipping Laravel apps, APIs, and admin dashboards." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Play CDN (kept for utility classes still used in markup) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: 'var(--background)',
+            foreground: 'var(--foreground)',
+            surface: 'var(--surface)',
+            'surface-elevated': 'var(--surface-elevated)',
+            card: 'var(--card)',
+            primary: { DEFAULT: 'var(--primary)', foreground: 'var(--primary-foreground)' },
+            border: 'var(--border)',
+            'muted-foreground': 'var(--muted-foreground)',
+            emerald: 'var(--emerald)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Per-section stylesheets -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/skills.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="#top" class="font-mono text-sm" style="text-decoration:none">
+        <span class="text-primary">~/</span><span class="text-foreground">dev</span><span class="blink"></span>
+      </a>
+      <nav id="nav-links" class="nav-links"></nav>
+      <a href="login.html" class="nav-cta">sign_in()</a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false"></button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu">
+      <div id="mobile-menu-inner" class="inner"></div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="top" class="hero">
+    <div class="bg-grid" style="position:absolute;inset:0;pointer-events:none"></div>
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+
+    <div class="container">
+      <div class="reveal" style="animation-delay:.05s">
+        <div class="hero-badge"><span class="dot"></span>available for new projects</div>
+        <h1 class="text-gradient">Alex Carter.</h1>
+        <p class="subtitle"><span class="text-primary">&gt;</span> Full Stack <span class="text-foreground">Laravel</span> Developer</p>
+        <p class="desc">I build practical, performant web applications and clean APIs. Backend-first, detail-obsessed, shipping with intent.</p>
+        <div class="cta-row">
+          <a href="#projects" class="btn-primary">View Projects →</a>
+          <a href="#contact" class="btn-ghost">✉ Contact Me</a>
+        </div>
+      </div>
+
+      <div class="reveal" style="animation-delay:.2s">
+        <div class="hero-portrait">
+          <div class="overlay-grid bg-grid"></div>
+          <div class="overlay-tint"></div>
+          <img src="assets/hero-portrait.jpg" alt="Alex Carter portrait" />
+          <div class="status-chip"><span class="dot"></span>online — building things</div>
+        </div>
+
+        <div class="code-card">
+          <div class="bar">
+            <div class="dots">
+              <span style="background:rgba(239,68,68,.7)"></span>
+              <span style="background:rgba(234,179,8,.7)"></span>
+              <span style="background:rgba(34,197,94,.7)"></span>
+            </div>
+            <span class="name">developer.ts</span>
+            <span style="width:3rem"></span>
+          </div>
+<pre><code class="whitespace-pre"><span style="color:var(--emerald)">const </span><span class="text-primary">developer</span><span class="text-foreground"> = {
+  </span><span class="text-muted-foreground">name: </span><span style="color:#fcd34d">"Alex Carter"</span><span class="text-muted-foreground">,
+  role: </span><span style="color:#fcd34d">"Full Stack Laravel Developer"</span><span class="text-muted-foreground">,
+  stack: </span><span style="color:#fcd34d">["Laravel", "PHP", "JS", "MySQL"]</span><span class="text-muted-foreground">,
+  focus: </span><span style="color:#fcd34d">"Backend systems &amp; APIs"</span><span class="text-muted-foreground">,
+  available: </span><span style="color:var(--emerald)">true</span><span class="text-foreground">,
+};</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="section reveal-on-scroll">
+    <div class="section-head">
+      <div class="section-eyebrow"><span style="color:var(--emerald)">01.</span> selected projects</div>
+      <h2>Selected Projects</h2>
+      <p>A few things I've shipped recently. More on request.</p>
+      <div class="section-rule"></div>
+    </div>
+    <div id="projects-grid" class="projects-grid"></div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" class="section reveal-on-scroll">
+    <div class="section-head">
+      <div class="section-eyebrow"><span style="color:var(--emerald)">02.</span> skills &amp; stack</div>
+      <h2>Skills &amp; Stack</h2>
+      <p>Tools I reach for daily — grouped by where they live in the stack.</p>
+      <div class="section-rule"></div>
+    </div>
+    <div id="skills-grid" class="skills-groups"></div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="section reveal-on-scroll">
+    <div class="section-head">
+      <div class="section-eyebrow"><span style="color:var(--emerald)">03.</span> about</div>
+      <h2>About</h2>
+      <p>A short version. The long one is in the code.</p>
+      <div class="section-rule"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>I'm a full-stack developer focused on <strong>Laravel</strong> and modern web stacks. I build practical applications that prioritize <strong>performance</strong>, <strong>maintainability</strong> and a calm developer experience.</p>
+        <p>Over the last 6+ years I've turned messy requirements into clean, testable code — from multi-tenant SaaS platforms to internal dashboards and APIs that quietly run businesses.</p>
+
+        <ul class="about-checks">
+          <li data-icon="check"></li>
+          <li data-icon="check"></li>
+          <li data-icon="check"></li>
+          <li data-icon="check"></li>
+        </ul>
+
+        <div class="about-meta">
+          <div class="item">
+            <div class="label"><span data-icon="pin"></span>Location</div>
+            <div class="value">Remote · UTC+1</div>
+          </div>
+          <div class="item">
+            <div class="label"><span data-icon="clock"></span>Availability</div>
+            <div class="value">Open to projects</div>
+          </div>
+          <div class="item">
+            <div class="label"><span data-icon="coffee"></span>Workflow</div>
+            <div class="value">Async &amp; written</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-portrait">
+        <div class="glow"></div>
+        <div class="frame">
+          <div class="grid-overlay bg-grid"></div>
+          <img src="assets/about-developer.jpg" alt="Developer working at night" loading="lazy" />
+          <div class="footer">
+            <div class="status">
+              <span class="ping"></span>
+              <span class="text-foreground">status:</span>
+              <span style="color:var(--emerald)">available_for_work</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section id="services" class="section reveal-on-scroll">
+    <div class="section-head">
+      <div class="section-eyebrow"><span style="color:var(--emerald)">04.</span> services</div>
+      <h2>Services</h2>
+      <p>Ways we can work together.</p>
+      <div class="section-rule"></div>
+    </div>
+    <div id="services-grid" class="services-grid"></div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section reveal-on-scroll">
+    <div class="section-head">
+      <div class="section-eyebrow"><span style="color:var(--emerald)">05.</span> contact</div>
+      <h2>Contact</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="contact-card">
+      <div class="bg-glow"></div>
+      <div class="contact-inner">
+        <div>
+          <p class="contact-eyebrow">// let's build something</p>
+          <h3 class="contact-title">Let's work together.</h3>
+          <p class="contact-desc">Drop a line — I usually reply within a day. Whether it's a new project, an API to untangle, or a Laravel codebase that needs care.</p>
+
+          <a id="contact-email-btn" href="mailto:hello@alexcarter.dev" class="contact-email-btn">
+            hello@alexcarter.dev
+          </a>
+
+          <div class="contact-socials">
+            <a href="mailto:hello@alexcarter.dev" data-icon="mail">hello@alexcarter.dev</a>
+            <a href="#" data-icon="github">github.com/alexcarter</a>
+            <a href="#" data-icon="linkedin">linkedin.com/in/alexcarter</a>
+            <a href="#" data-icon="whatsapp">WhatsApp</a>
+          </div>
+        </div>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="field">
+            <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
+            <span class="error-msg" data-error="name"></span>
+          </div>
+          <div class="field">
+            <input type="email" name="email" placeholder="Email" autocomplete="email" required />
+            <span class="error-msg" data-error="email"></span>
+          </div>
+          <div class="field">
+            <input type="text" name="subject" placeholder="Subject" required />
+            <span class="error-msg" data-error="subject"></span>
+          </div>
+          <div class="field">
+            <textarea name="message" placeholder="Message" required></textarea>
+            <span class="error-msg" data-error="message"></span>
+          </div>
+          <button id="contact-submit" type="submit" class="submit">Send message </button>
+          <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="site-footer" class="site-footer-section reveal-on-scroll"></footer>
+
+  <!-- Inject check-list text since they were rendered empty placeholders for icon prepending -->
+  <script>
+    (function fillChecks() {
+      const items = [
+        '6+ years shipping production Laravel apps',
+        'API design, query performance & clean architecture',
+        'Test-driven, code-reviewed, documented',
+        'Comfortable across the stack — DB to UI',
+      ];
+      document.querySelectorAll('.about-checks li').forEach((li, i) => {
+        const span = document.createElement('span');
+        span.textContent = items[i] || '';
+        li.appendChild(span);
+      });
+    })();
+  </script>
+
+  <!-- Per-section JS (icons must load first) -->
+  <script src="js/icons.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/skills.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
