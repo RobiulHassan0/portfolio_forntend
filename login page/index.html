@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --background:#0f172a;
+    --foreground:#e5e7eb;
+    --surface:#111827;
+    --surface-elevated:#1f2937;
+    --card:#111827;
+    --primary:#3b82f6;
+    --primary-foreground:#f8fafc;
+    --emerald:#10b981;
+    --muted-foreground:#9ca3af;
+    --border:rgba(255,255,255,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:var(--background);
+    color:var(--foreground);
+    font-family:'Inter',sans-serif;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.login-container{
+    width:100%;
+    max-width:430px;
+}
+
+.login-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.login-header .path{
+    color:var(--primary);
+    font-family:'JetBrains Mono',monospace;
+    margin-bottom:10px;
+}
+
+.login-header h1{
+    font-size:2.3rem;
+    margin-bottom:12px;
+}
+
+.login-header p{
+    color:var(--muted-foreground);
+}
+
+.login-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:35px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    color:var(--muted-foreground);
+    font-size:.9rem;
+    font-family:'JetBrains Mono',monospace;
+}
+
+.form-group input{
+    width:100%;
+    padding:14px 16px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:var(--surface);
+    color:var(--foreground);
+    outline:none;
+    transition:.3s;
+}
+
+.form-group input:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(59,130,246,.15);
+}
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    font-size:.9rem;
+}
+
+.options label{
+    color:var(--muted-foreground);
+}
+
+.options a{
+    color:var(--primary);
+    text-decoration:none;
+}
+
+.options a:hover{
+    text-decoration:underline;
+}
+
+.login-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:var(--primary);
+    color:white;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:
+        0 0 0 1px rgba(59,130,246,.3),
+        0 10px 40px -10px rgba(59,130,246,.4);
+}
+
+.footer-note{
+    margin-top:25px;
+    text-align:center;
+    color:var(--muted-foreground);
+    font-size:.9rem;
+    font-family:'JetBrains Mono',monospace;
+}
+
+.code{
+    color:var(--emerald);
+}
+
+</style>
+</head>
+<body>
+
+<div class="login-container">
+
+    <div class="login-header">
+        <div class="path">~/admin/login</div>
+
+        <h1>Welcome Back</h1>
+
+        <p>
+            Sign in to manage your portfolio dashboard.
+        </p>
+    </div>
+
+    <div class="login-card">
+
+        <form>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input
+                    type="email"
+                    placeholder="admin@example.com">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input
+                    type="password"
+                    placeholder="••••••••">
+            </div>
+
+            <div class="options">
+
+                <label>
+                    <input type="checkbox">
+                    Remember me
+                </label>
+
+                <a href="#">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+            <button class="login-btn">
+                access_dashboard()
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="footer-note">
+        Portfolio <span class="code">Admin Access Only</span>
+    </div>
+
+</div>
+
+</body>
+</html>
